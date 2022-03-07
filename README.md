@@ -142,4 +142,8 @@ Finally, edit `Index.razor` to test new message boxes:
 
 ## The Result
 
+![image](images/screenshot2.png)
 
+## Next
+
+Complete BookStore sample with MudBlazor components (COMMING SOON!)
