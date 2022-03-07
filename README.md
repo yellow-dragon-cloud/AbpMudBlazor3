@@ -110,3 +110,36 @@ public class MudBlazorUiMessageService : IUiMessageService, IScopedDependency
 }
 ```
 
+This code replaces `IUiMessageService` service. See [Overriding Services](https://docs.abp.io/en/abp/latest/Customizing-Application-Modules-Overriding-Services) for more information.
+
+Finally, edit `Index.razor` to test new message boxes:
+
+```razor
+@page "/"
+@using Volo.Abp.AspNetCore.Components.Messages
+@using Volo.Abp.AspNetCore.Components.Notifications
+@inherits BookStoreComponentBase
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IUiNotificationService NotificationService
+@inject IUiMessageService MessageService
+
+<div class="container">
+    <div class="p-5 text-center">
+        <Button onclick="@(async () => { await NotificationService.Success("Hello, World!"); await NotificationService.Warn("Something went wrong!"); })">
+            Show Notifications!
+        </Button>
+        <hr />
+        <Button onclick="@(() => { MessageService.Info("Hello, World!"); })">
+            Show Info!
+        </Button>
+        <br />
+        <Button onclick="@(() => { throw new Exception(); })">
+            Show Error!
+        </Button>
+    </div>
+</div>
+```
+
+## The Result
+
+
