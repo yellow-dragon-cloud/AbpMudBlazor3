@@ -146,4 +146,4 @@ Finally, edit `Index.razor` to test new message boxes:
 
 ## Next
 
-Complete BookStore sample with MudBlazor components (COMMING SOON!)
+[MudBlazor Theme in ABP Blazor WebAssembly PART 4](https://github.com/yellow-dragon-cloud/AbpMudBlazor4)
